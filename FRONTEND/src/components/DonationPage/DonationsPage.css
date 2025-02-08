@@ -1,0 +1,194 @@
+.donations-page {
+    font-family: "Bitter", serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .hero-donation {
+    background-color: #EAEAEE;
+    padding: 80px 0;
+    text-align: center;
+  }
+  
+  .hero-donation h1 {
+    font-family: "Young Serif", serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-donation .highlight {
+    color: #ff4d4d;
+  }
+  
+  .hero-donation p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  
+  .donation-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .amount-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .amount-options button {
+    padding: 10px 20px;
+    border: 2px solid #333;
+    background-color: gray;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .amount-options button.selected {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .amount-options input[type="number"] {
+    padding: 10px;
+    border: 2px solid #333;
+    font-size: 1rem;
+    width: 120px;
+  }
+  
+  .donation-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    font-size: 1rem;
+  }
+  
+  .btn-primary {
+    background-color: #ff4d4d;
+    color: gray;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #ff3333;
+  }
+  
+  .why-give {
+    padding: 80px 0;
+    background-color: transparent;
+  }
+  
+  .why-give h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .reason-item {
+    text-align: center;
+  }
+  
+  .reason-icon {
+    font-size: 2rem;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+  }
+  
+  .testimonials {
+    padding: 80px 0;
+  }
+  
+  .testimonial-item {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 60px;
+  }
+  
+  .testimonial-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-item blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-item .author {
+    font-weight: bold;
+  }
+  
+  .faq {
+    padding: 80px 0;
+  }
+  
+  .faq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+  }
+  
+  .faq-question {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 0;
+    width: 100%;
+    text-align: left;
+    transition: color 0.3s ease;
+  }
+  
+  .faq-question:hover {
+    color: #ff4d4d;
+  }
+  
+  .faq-answer {
+    padding: 20px;
+    background-color: #f7f7f7;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-donation h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-donation p {
+      font-size: 1rem;
+    }
+  
+    .amount-options {
+      flex-wrap: wrap;
+    }
+  
+    .why-give h2,
+    .faq h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  

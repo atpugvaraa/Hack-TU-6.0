@@ -1,14 +1,17 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Link } from "react-router-dom";
-import "./Header.css";
+"use client"
+
+import { useState, useContext } from "react"
+import { Link, NavLink } from "react-router-dom"
+import { AuthContext } from "../context/AuthContext";
+import "./Header.css"
 
 function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { user, logout } = useContext(AuthContext)
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+    setIsMenuOpen(!isMenuOpen)
+  }
 
   return (
     <header className="header">
@@ -19,63 +22,52 @@ function Header() {
         <nav className={`header-nav ${isMenuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <NavLink
-                to="/"
-                activeClassName="active"
-                exact
-              >
-                Home
-              </NavLink>
+              <NavLink to="/" activeClassName = "active" exact>Home</NavLink>
             </li>
             <li>
-              <NavLink to="/shop" activeClassName="active">
-                Shop
-              </NavLink>
+            <NavLink to="/shop" activeClassName = "active">Shop</NavLink>
             </li>
             <li>
-              <NavLink to="/services" activeClassName="active">
-                Services
-              </NavLink>
+            <NavLink to="/services" activeClassName = "active">Services</NavLink>
             </li>
             <li>
-              <NavLink to="/about" activeClassName="active">
-                About
-              </NavLink>
+            <NavLink to="/about" activeClassName = "active">About</NavLink>
             </li>
             <li>
-              <NavLink to="/contact" activeClassName="active">
-                Contact
-              </NavLink>
+            <NavLink to="/contact" activeClassName = "active">Contact</NavLink>
             </li>
             <li>
-              <NavLink to="/donations" activeClassName="active">
-                Donate
-              </NavLink>
+            <NavLink to="/donations" activeClassName = "active">Donate</NavLink>
             </li>
-            <li>
-              <NavLink to="/login-register" activeClassName="active">
-                Login/Register
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/search" activeClassName="active">
-                Search
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/profile" activeClassName="active">
-                Profile
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/admin" activeClassName="active">
-                Admin
-              </NavLink>
-            </li>
+            {user && (
+              <>
+                <li>
+                <NavLink to="/search" activeClassName = "active">Search</NavLink>
+                </li>
+                <li>
+                <NavLink to="/profile" activeClassName = "active">Profile</NavLink>
+                </li>
+                {user.type === "admin" && (
+                  <li>
+                    <NavLink to="/admin" activeClassName = "active">Admin</NavLink>
+                  </li>
+                )}
+                <li>
+                  <button onClick={logout} className="logout-button">
+                    Logout
+                  </button>
+                </li>
+              </>
+            )}
+            {!user && (
+              <li>
+                <NavLink to="/login" activeClassName = "active">Login/Register</NavLink>
+              </li>
+            )}
           </ul>
         </nav>
         <div className="header-actions">
-          <NavLink to="/cart" className="cart-link">
+        <NavLink to="/cart" activeClassName = "active">
             Cart
           </NavLink>
         </div>
@@ -86,7 +78,8 @@ function Header() {
         </button>
       </div>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
+

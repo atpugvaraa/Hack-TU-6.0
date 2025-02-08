@@ -1,0 +1,82 @@
+.add-inventory-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .add-inventory-page h1 {
+    font-family: "Young Serif", serif;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+  
+  .inventory-form {
+    background-color: var(--accent-color);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+  }
+  
+  .submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #333;
+  }
+  
+  .inventory-list h2 {
+    font-family: "Young Serif", serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .inventory-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .inventory-card {
+    background-color: var(--accent-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inventory-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  .inventory-card p {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+  }
+  
+  

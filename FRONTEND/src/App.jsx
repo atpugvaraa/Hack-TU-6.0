@@ -9,6 +9,7 @@ import HomePage from "./components/HomePage/HomePage"
 import ShopPage from "./components/ShopPage/ShopPage"
 import ServicesPage from "./components/ServicesPage/ServicesPage"
 import AboutPage from "./components/AboutPage/AboutPage"
+import AddInventoryPage from "./components/AddInventoryPage/AddInventoryPage"
 import ContactPage from "./components/ContactPage/ContactPage"
 import DonatePage from "./components/DonationPage/DonationPage"
 import LoginPage from "./components/LoginPage/LoginPage"
@@ -69,6 +70,14 @@ function App() {
                 element={
                   <ProtectedRoute adminOnly={true}>
                     <AdminDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/add-inventory"
+                element={
+                  <ProtectedRoute>
+                    <AddInventoryPage />
                   </ProtectedRoute>
                 }
               />

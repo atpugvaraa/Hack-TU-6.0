@@ -22,34 +22,37 @@ function Header() {
         <nav className={`header-nav ${isMenuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <NavLink to="/" activeClassName = "active" exact>Home</NavLink>
+              <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>Home</NavLink>
             </li>
             <li>
-            <NavLink to="/shop" activeClassName = "active">Shop</NavLink>
+              <NavLink to="/shop" className={({ isActive }) => (isActive ? "active" : "")}>Shop</NavLink>
             </li>
             <li>
-            <NavLink to="/services" activeClassName = "active">Services</NavLink>
+              <NavLink to="/services" className={({ isActive }) => (isActive ? "active" : "")}>Services</NavLink>
             </li>
             <li>
-            <NavLink to="/about" activeClassName = "active">About</NavLink>
+              <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")}>About</NavLink>
             </li>
             <li>
-            <NavLink to="/contact" activeClassName = "active">Contact</NavLink>
+              <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")}>Contact</NavLink>
             </li>
             <li>
-            <NavLink to="/donations" activeClassName = "active">Donate</NavLink>
+              <NavLink to="/donations" className={({ isActive }) => (isActive ? "active" : "")}>Donate</NavLink>
             </li>
             {user && (
               <>
                 <li>
-                <NavLink to="/search" activeClassName = "active">Search</NavLink>
+                  <NavLink to="/add-inventory" className={({ isActive }) => (isActive ? "active" : "")}>Add Inventory</NavLink>
                 </li>
                 <li>
-                <NavLink to="/profile" activeClassName = "active">Profile</NavLink>
+                  <NavLink to="/search" className={({ isActive }) => (isActive ? "active" : "")}>Search</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/profile" className={({ isActive }) => (isActive ? "active" : "")}>Profile</NavLink>
                 </li>
                 {user.type === "admin" && (
                   <li>
-                    <NavLink to="/admin" activeClassName = "active">Admin</NavLink>
+                    <NavLink to="/admin" className={({ isActive }) => (isActive ? "active" : "")}>Admin</NavLink>
                   </li>
                 )}
                 <li>
@@ -61,13 +64,13 @@ function Header() {
             )}
             {!user && (
               <li>
-                <NavLink to="/login" activeClassName = "active">Login/Register</NavLink>
+                <NavLink to="/login" className={({ isActive }) => (isActive ? "active" : "")}>Login/Register</NavLink>
               </li>
             )}
           </ul>
         </nav>
         <div className="header-actions">
-        <NavLink to="/cart" activeClassName = "active">
+          <NavLink to="/cart" className={({ isActive }) => (isActive ? "active" : "")}>
             Cart
           </NavLink>
         </div>
@@ -82,4 +85,3 @@ function Header() {
 }
 
 export default Header
-

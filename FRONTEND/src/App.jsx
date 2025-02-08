@@ -1,35 +1,85 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+"use client"
+
+import { useState, useContext } from "react"
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom"
+import { AuthProvider } from "./context/AuthContext"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import HomePage from "./components/HomePage/HomePage"
+import ShopPage from "./components/ShopPage/ShopPage"
+import ServicesPage from "./components/ServicesPage/ServicesPage"
+import AboutPage from "./components/AboutPage/AboutPage"
+import ContactPage from "./components/ContactPage/ContactPage"
+import DonatePage from "./components/DonationPage/DonationPage"
+import LoginPage from "./components/LoginPage/LoginPage"
+import SearchPage from "./components/SearchPage/SearchPage"
+import ProfilePage from "./components/ProfilePage/ProfilePage"
+import AdminDashboard from "./components/AdminDashboard/AdminDashboard"
+import { AuthContext } from "./context/AuthContext"
+import "./App.css"
+
+
+const ProtectedRoute = ({ children, adminOnly = false }) => {
+  const { user } = useContext(AuthContext)
+
+  if (!user) {
+    return <Navigate to="/login" />
+  }
+
+  if (adminOnly && user.type !== "admin") {
+    return <Navigate to="/" />
+  }
+
+  return children
+}
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <AuthProvider>
+      <Router>
+        <div className="site-wrapper">
+          <Header />
+          <main id="page" className="container" role="main">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/shop" element={<ShopPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/donations" element={<DonatePage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route
+                path="/search"
+                element={
+                  <ProtectedRoute>
+                    <SearchPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <ProfilePage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin"
+                element={
+                  <ProtectedRoute adminOnly={true}>
+                    <AdminDashboard />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </AuthProvider>
   )
 }
 
 export default App
+

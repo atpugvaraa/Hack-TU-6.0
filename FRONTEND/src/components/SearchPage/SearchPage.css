@@ -1,0 +1,131 @@
+.search-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .search-page h1 {
+    font-family: "Young Serif", serif;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .search-form {
+    margin-bottom: 2rem;
+  }
+  
+  .search-bar {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+  
+  .search-bar input {
+    flex-grow: 1;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .search-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .filters select,
+  .filters input {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+  }
+  
+  .location-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 0 0.5rem;
+  }
+  
+  .location-input input {
+    border: none;
+    padding: 0.5rem;
+  }
+  
+  .sort-options {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .search-results {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .results-list {
+    flex: 2;
+  }
+  
+  .map-view {
+    flex: 1;
+  }
+  
+  .map-placeholder {
+    background-color: #f0f0f0;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+  
+  .search-suggestions {
+    margin-top: 2rem;
+  }
+  
+  .search-suggestions h2 {
+    font-family: "Young Serif", serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .search-suggestions ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .search-suggestions li {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .filters {
+      flex-direction: column;
+    }
+  
+    .search-results {
+      flex-direction: column;
+    }
+  
+    .map-view {
+      order: -1;
+    }
+  }
+  
+  

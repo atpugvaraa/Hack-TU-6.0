@@ -1,0 +1,110 @@
+.admin-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .admin-dashboard h1 {
+    font-family: "Young Serif", serif;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .stat-card h3 {
+    margin: 0.5rem 0;
+    color: var(--primary-color);
+  }
+  
+  .stat-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  .dashboard-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .dashboard-sections h2 {
+    font-family: "Young Serif", serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .chart-placeholder {
+    background-color: var(--accent-color);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+  
+  .management-actions,
+  .report-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .management-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .management-table th,
+  .management-table td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--accent-color);
+  }
+  
+  .transaction-list {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  .transaction-item {
+    background-color: var(--accent-color);
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .btn-small {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .management-actions,
+    .report-actions {
+      flex-direction: column;
+    }
+  
+    .management-table {
+      font-size: 0.9rem;
+    }
+  }
+  
+  

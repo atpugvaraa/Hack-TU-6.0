@@ -1,5 +1,17 @@
 // swift-tools-version:6.0
 import PackageDescription
+import Vapor
+
+public func configure(_ app: Application) throws {
+    // CORS configuration allowing localhost:5174 for development
+    let corsConfiguration = CORSMiddleware.Configuration(
+        allowedOrigins: ["http://localhost:5174"], // Allowing requests from localhost:5174
+        allowedMethods: [.GET, .POST, .PUT, .DELETE], // Allowed HTTP methods
+        allowedHeaders: [.accept, .contentType, .authorization] // Allowed headers
+    )
+    app.middleware.use(CORSMiddleware(configuration: corsConfiguration))
+}
+
 
 let package = Package(
     name: "rex",

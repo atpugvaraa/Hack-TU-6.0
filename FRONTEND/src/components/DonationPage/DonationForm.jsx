@@ -1,18 +1,14 @@
+"use client"
+
 import { useState } from "react"
 
-
-export default function DonationForm() {
+export default function DonationForm({ onDonate }) {
   const [amount, setAmount] = useState(10)
   const [frequency, setFrequency] = useState("MONTHLY")
-  const upiURL = "upi://pay?pa=tanisha2005sharma@oksbi&pn=PRINCE%20SHARMA&aid=uGICAgMCt1925RQ";
-  const UPIOpener = ()=>{
-    window.open(upiURL, "_blank")
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    UPIOpener()
-    console.log("Donation submitted:", { amount, frequency })
+    onDonate(amount)
   }
 
   return (
@@ -31,9 +27,7 @@ export default function DonationForm() {
         <input
           type="number"
           value={amount}
-          onChange={(e) => {
-            if (e.target.value>=0){
-              setAmount(Number(e.target.value))}}}
+          onChange={(e) => setAmount(Number(e.target.value))}
           placeholder="Custom Amount"
         />
       </div>

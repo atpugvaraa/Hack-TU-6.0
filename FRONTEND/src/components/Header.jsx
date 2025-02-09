@@ -43,12 +43,6 @@ function Header() {
               <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>Home</NavLink>
             </li>
             <li>
-              <NavLink to="/shop" className={({ isActive }) => (isActive ? "active" : "")}>Shop</NavLink>
-            </li>
-            <li>
-              <NavLink to="/services" className={({ isActive }) => (isActive ? "active" : "")}>Services</NavLink>
-            </li>
-            <li>
               <NavLink to="/about" className={({ isActive }) => (isActive ? "active" : "")}>About</NavLink>
             </li>
             <li>

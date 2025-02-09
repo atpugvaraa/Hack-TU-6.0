@@ -5,7 +5,7 @@ export default function WhyGive() {
     "Fund innovative environmental projects",
     "Help build a greener future",
     "Empower local communities",
-    "blah blah blah",
+    "Help the underprivileged",
   ]
 
   return (

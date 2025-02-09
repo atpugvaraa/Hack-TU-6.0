@@ -18,7 +18,7 @@ const ContactPage = () => {
           <ContactForm />
         </section>
         <section className="image-section">
-          <img src="/placeholder.svg?height=400&width=600" alt="Contact Us" />
+          <img src="/wow.png?height=400&width=600" alt="Contact Us" />
         </section>
       </div>
     </div>

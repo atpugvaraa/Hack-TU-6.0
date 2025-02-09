@@ -1,17 +1,15 @@
-import React from 'react'
-import AboutSection from './AboutSection'
-import ExecutiveBoard from './Contributors'
+import React from 'react';
+import AboutSection from './AboutSection';
+import ExecutiveBoard from './Contributors';
+import './AboutPage.css';
 
 function AboutPage() {
-
   return (
-    <>
-    <div>
-      <AboutSection/> 
-      <ExecutiveBoard/>
+    <div className="about-page">
+      <AboutSection /> 
+      <ExecutiveBoard />
     </div>
-    </>
-  )
+  );
 }
 
-export default AboutPage
+export default AboutPage;

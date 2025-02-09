@@ -6,8 +6,6 @@ import { AuthProvider } from "./context/AuthContext"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import HomePage from "./components/HomePage/HomePage"
-import ShopPage from "./components/ShopPage/ShopPage"
-import ServicesPage from "./components/ServicesPage/ServicesPage"
 import AboutPage from "./components/AboutPage/AboutPage"
 import AddInventoryPage from "./components/AddInventoryPage/AddInventoryPage"
 import ContactPage from "./components/ContactPage/ContactPage"
@@ -45,8 +43,6 @@ function App() {
           <main id="page" className="container" role="main">
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/shop" element={<ShopPage />} />
-              <Route path="/services" element={<ServicesPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/donations" element={<DonatePage />} />

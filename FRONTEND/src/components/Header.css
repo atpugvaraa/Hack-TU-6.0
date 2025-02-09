@@ -1,7 +1,7 @@
 /* General Styles */
 .header {
-  background-color: #ffffff;
-  color: var(--secondary-color);
+  background-color: transparent;
+  color: transparent;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
 }

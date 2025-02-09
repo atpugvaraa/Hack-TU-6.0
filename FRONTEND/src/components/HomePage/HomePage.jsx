@@ -1,72 +1,98 @@
-import { Link } from "react-router-dom"
-import "./HomePage.css"
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import "./HomePage.css";
 
 function HomePage() {
   return (
     <div className="home-page">
+      {/* Hero Section */}
       <section className="hero">
-        <h1>Turn Waste into Opportunity</h1>
-        <p>
-          Waste doesn't have to be wasted. This platform makes it easy for people and businesses to share, upcycle, and
-          repurpose materials instead of throwing them away. Whether you're looking to give something a second life or
-          find sustainable resources, smart matching and a built-in marketplace help make it happen. Less waste, more
-          impact—let's build a greener future together!
-        </p>
-        <Link to="/about" className="btn">
-          Learn more
-        </Link>
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.8 }}
+          className="hero-content"
+        >
+          <h1>Turn Waste into Opportunity</h1>
+          <p>
+            Waste doesn't have to be wasted. Our platform enables businesses and individuals to share, upcycle, and repurpose materials, reducing landfill waste and promoting sustainability.
+          </p>
+          <Link to="/about" className="btn">
+            Learn More
+          </Link>
+        </motion.div>
       </section>
 
+      {/* Services Section */}
       <section className="services">
-        <h2>Explore our services</h2>
+        <h2>Explore Our Services</h2>
         <div className="service-grid">
-          <div className="service-item">
+          <motion.div 
+            whileHover={{ scale: 1.05 }} 
+            className="service-item"
+          >
             <img src="/Circular_Marketplace.jpg" alt="Circular Marketplace" />
             <h3>Circular Marketplace</h3>
-            <p>Buyers and sellers trade materials to reduce landfill use.</p>
-          </div>
-          <div className="service-item">
+            <p>Buyers and sellers trade materials, reducing landfill waste.</p>
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }} 
+            className="service-item"
+          >
             <img src="/Waste_Matcher.jpg" alt="AI Waste Matcher" />
             <h3>AI Waste Matcher</h3>
-            <p>
-              Users list their "waste" or surplus materials. The platform uses AI and ML to match waste resources with
-              potential upcycling or reuse opportunities based on location, industry, or need.
-            </p>
-          </div>
-          <div className="service-item">
-            <img src="/Real_Time_Impact.jpg" alt="Real-Time Impact Metrics" />
-            <h3>Real-Time Impact Metrics</h3>
-            <p>
-              The website tracks CO₂ saved, waste diverted from landfills, and resource efficiency metrics for each
-              transaction, creating transparency and rewarding users with "Sustainability Credits."
-            </p>
-          </div>
+            <p>Our AI matches surplus materials with potential reuse opportunities.</p>
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }} 
+            className="service-item"
+          >
+            <img src="/Real_Time_Impact.jpg" alt="Impact Metrics" />
+            <h3>Impact Metrics</h3>
+            <p>Track CO₂ savings, waste diversion, and sustainability credits.</p>
+          </motion.div>
         </div>
-        <Link to="/services" className="btn">
+        <Link to="/ai-waste-matcher" className="btn">
           Explore More
         </Link>
       </section>
 
+      {/* Features Section */}
       <section className="features">
-        <h2>Our Features</h2>
+        <h2>Why Choose Us?</h2>
         <div className="feature-grid">
-          <div className="feature-item">
+          <motion.div 
+            whileHover={{ scale: 1.05 }} 
+            className="feature-item"
+          >
             <img src="/Cross_Platform.jpg" alt="Cross-Sector Collaboration" />
             <h3>Cross-Sector Collaboration</h3>
-          </div>
-          <div className="feature-item">
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }} 
+            className="feature-item"
+          >
             <img src="/Crypto.jpg" alt="Incentivization with Crypto" />
             <h3>Incentivization with Crypto</h3>
-          </div>
-          <div className="feature-item">
+          </motion.div>
+          <motion.div 
+            whileHover={{ scale: 1.05 }} 
+            className="feature-item"
+          >
             <img src="/Gamified_Sustainability.jpg" alt="Gamified Sustainability" />
             <h3>Gamified Sustainability</h3>
-          </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* Call to Action */}
+      <section className="cta">
+        <h2>Ready to Make an Impact?</h2>
+        <p>Join our community and help reduce waste through smart resource sharing.</p>
+        <Link to="/login" className="btn cta-btn">Get Started</Link>
+      </section>
     </div>
-  )
+  );
 }
 
-export default HomePage
-
+export default HomePage;

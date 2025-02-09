@@ -1,13 +1,32 @@
 "use client"
 
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { AuthContext } from "../context/AuthContext";
+import {ShoppingCart, Zap} from "lucide-react";
 import "./Header.css"
+
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { user, logout } = useContext(AuthContext)
+  const [cartItemCount, setCartItemCount] = useState(0)
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem("cart")) || []
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0)
+      setCartItemCount(count)
+    }
+
+    updateCartCount()
+    window.addEventListener("storage", updateCartCount)
+
+    return () => {
+      window.removeEventListener("storage", updateCartCount)
+    }
+  }, [])
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -45,11 +64,20 @@ function Header() {
                   <NavLink to="/add-inventory" className={({ isActive }) => (isActive ? "active" : "")}>Add Inventory</NavLink>
                 </li>
                 <li>
+                  <NavLink to="/ai-waste-matcher" className={({ isActive }) => (isActive ? "active" : "")}>Waste Matcher</NavLink>
+                </li>
+                <li>
                   <NavLink to="/search" className={({ isActive }) => (isActive ? "active" : "")}>Search</NavLink>
                 </li>
                 <li>
                   <NavLink to="/profile" className={({ isActive }) => (isActive ? "active" : "")}>Profile</NavLink>
                 </li>
+                <div className="header-actions">
+                  <NavLink to="/cart" className={({ isActive }) => (isActive ? "active" : "")}>
+                  <ShoppingCart size={20} />
+                  <span className="cart-count">{cartItemCount}</span>
+                  </NavLink>
+                </div>
                 {user.type === "admin" && (
                   <li>
                     <NavLink to="/admin" className={({ isActive }) => (isActive ? "active" : "")}>Admin</NavLink>
@@ -69,11 +97,7 @@ function Header() {
             )}
           </ul>
         </nav>
-        <div className="header-actions">
-          <NavLink to="/cart" className={({ isActive }) => (isActive ? "active" : "")}>
-            Cart
-          </NavLink>
-        </div>
+        
         <button className="menu-toggle" onClick={toggleMenu}>
           <span></span>
           <span></span>

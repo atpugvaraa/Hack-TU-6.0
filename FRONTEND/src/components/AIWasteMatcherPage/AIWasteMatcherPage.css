@@ -1,0 +1,130 @@
+.ai-waste-matcher {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .ai-waste-matcher h1 {
+    font-family: "Young Serif", serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .input-section {
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .form-group select,
+  .form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+  }
+  
+  .ai-waste-matcher button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ai-waste-matcher button:hover {
+    background-color: #333;
+  }
+  
+  .ai-waste-matcher button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .thinking-animation {
+    margin-top: 1rem;
+  }
+  
+  .thinking-animation p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .matches-section {
+    margin-top: 2rem;
+  }
+  
+  .match-card {
+    background-color: var(--accent-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .match-card h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .co2-impact {
+    margin-top: 2rem;
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .co2-saved {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 1rem 0;
+  }
+  
+  .co2-bar {
+    height: 20px;
+    background-color: #4caf50;
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  

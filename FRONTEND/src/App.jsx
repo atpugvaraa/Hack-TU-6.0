@@ -17,6 +17,8 @@ import SearchPage from "./components/SearchPage/SearchPage"
 import ProfilePage from "./components/ProfilePage/ProfilePage"
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard"
 import { AuthContext } from "./context/AuthContext"
+import CartPage from "./components/CartPage/CartPage"
+import AIWasteMatcherPage from "./components/AIWasteMatcherPage/AIWasteMatcher"
 import "./App.css"
 
 
@@ -78,6 +80,15 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <AddInventoryPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/cart" element={<CartPage />} />
+              <Route
+                path="/ai-waste-matcher"
+                element={
+                  <ProtectedRoute>
+                    <AIWasteMatcherPage />
                   </ProtectedRoute>
                 }
               />

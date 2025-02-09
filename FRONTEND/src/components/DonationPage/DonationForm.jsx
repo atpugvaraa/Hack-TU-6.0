@@ -27,7 +27,7 @@ export default function DonationForm({ onDonate }) {
         <input
           type="number"
           value={amount}
-          onChange={(e) => setAmount(Number(e.target.value))}
+          onChange={(e) =>  setAmount(Number(e.target.value))}
           placeholder="Custom Amount"
         />
       </div>

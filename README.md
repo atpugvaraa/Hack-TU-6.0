@@ -1,4 +1,4 @@
-# Hawk-Tuah-6.0
+# Hack-TU-6.0
 THE SLACKERS
 Contributors are :
 1. PRINCE SHARMA

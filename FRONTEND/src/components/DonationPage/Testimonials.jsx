@@ -2,17 +2,17 @@ const testimonials = [
   {
     quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     author: "Keith Finley",
-    image: "/GURNEET.jpg",
+    image: "/Mog.jpg",
   },
   {
     quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     author: "Monet Goode",
-    image: "/GURNEET.jpg",
+    image: "/Mog.jpg",
   },
   {
     quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     author: "Channing Lee",
-    image: "/GURNEET.jpg",
+    image: "/Mog.jpg",
   },
 ]
 
